@@ -1,13 +1,38 @@
 
 
+var symbolList = []
+var profileData = []
+var listSymbol = []
+var listPrice = []
+fetch('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/stock/list')
+  .then(response => response.json())
+  .then(data => {
+    
+    for(var i = 0 ; i<= 100 ;i++){ 
+        var newSpan = document.createElement('span');
+        // newSpan.setAttribute("style", "")
+        var demodiv = document.getElementById('list-compain');
+        newSpan.innerHTML = data[i].symbol + " "
+        
+        demodiv.appendChild(newSpan);
+
+        var newSpan2 = document.createElement('span');
+        newSpan2.setAttribute("style", "color: green; font-weight: bold; padding-right: 30px;")
+        var demodiv2 = document.getElementById('list-compain');
+        newSpan2.innerHTML =data[i].price + "$ "
+        
+        demodiv2.appendChild(newSpan2);
+ 
+ 
+    }
+    
+    
+    
+  });
 
 var searchList = [];
 let jsondata;
 var obj;
-
-
-
-
 
 document.getElementById("button-addon2").addEventListener("click", () => {
     index = 0
@@ -31,35 +56,38 @@ document.getElementById("button-addon2").addEventListener("click", () => {
                      
 
                     function SearchNasdaqStocks(index){
-                        fetch('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/' + data[index].symbol)
-                        .then(res => res.json())
-                        .then(data => obj = data)
-                        .then(() => {
-                            var ul = document.createElement('DIV');
-                            ul.setAttribute('style', 'padding: 0; margin: 0;display:flex; justify-content:space-between;  align-items: center; margin-top: 20px');
-                            ul.setAttribute('id', 'theList');
-                            var cont = document.getElementById('result');
-                            var a1 = document.createElement('a');
-                            var img = document.createElement("IMG");
-                            var spanPre = document.createElement("SPAN");
-                            if (obj.profile.changes > 0) {
-                                spanPre.style.color = "green"
-                            } else {
-                                spanPre.style.color = "red"
-                            }
-                            spanPre.innerHTML = obj.profile.changesPercentage
-                            img.setAttribute("src", obj.profile.image);
-                            img.setAttribute('width', 50);
-                            img.setAttribute('height', 50);
-                            a1.setAttribute("href", "/company.html?symbol=" + data[index].symbol);
-                            innerMarge = data[index].name + " (" + data[index].symbol + ")";
-                            a1.innerHTML = innerMarge
-                            ul.appendChild(img);
-                            ul.appendChild(a1);
-                            ul.appendChild(spanPre)
-                    
-                            cont.appendChild(ul);
-                        })
+                        
+                            fetch('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/' + data[index].symbol)
+                            .then(res => res.json())
+                            .then(data => obj = data)
+                            .then(() => {
+                                var ul = document.createElement('DIV');
+                                ul.setAttribute('style', 'padding: 0; margin: 0;display:flex; justify-content:space-between;  align-items: center; margin-top: 20px');
+                                ul.setAttribute('id', 'theList');
+                                var cont = document.getElementById('result');
+                                var a1 = document.createElement('a');
+                                var img = document.createElement("IMG");
+                                var spanPre = document.createElement("SPAN");
+                                if (obj.profile.changes > 0) {
+                                    spanPre.style.color = "green"
+                                } else {
+                                    spanPre.style.color = "red"
+                                }
+                                spanPre.innerHTML = obj.profile.changesPercentage
+                                img.setAttribute("src", obj.profile.image);
+                                img.setAttribute('width', 50);
+                                img.setAttribute('height', 50);
+                                a1.setAttribute("href", "/company.html?symbol=" + data[index].symbol);
+                                innerMarge = data[index].name + " (" + data[index].symbol + ")";
+                                a1.innerHTML = innerMarge
+                                ul.appendChild(img);
+                                ul.appendChild(a1);
+                                ul.appendChild(spanPre)
+                        
+                                cont.appendChild(ul);
+                            })
+                        
+                       
                     }
 
                     
