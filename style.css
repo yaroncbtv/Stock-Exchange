@@ -99,8 +99,8 @@
   
     
     
-    
-    margin: 100px auto;
+    padding: 20px;
+    margin: 50px auto;
     background: white;
     border-radius: 5px;
   }
@@ -117,4 +117,8 @@
     text-align: center;
     padding: 20px;
     font-size: 50px;
+  }
+  #theImg{
+    width: 100px;
+    height: 100px;
   }
