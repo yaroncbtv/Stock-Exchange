@@ -4,13 +4,14 @@ var symbolList = []
 var profileData = []
 var listSymbol = []
 var listPrice = []
+var theSP = ""
 fetch('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/stock/list')
   .then(response => response.json())
   .then(data => {
     
     for(var i = 0 ; i<= 100 ;i++){ 
         var newSpan = document.createElement('span');
-        // newSpan.setAttribute("style", "")
+        newSpan.setAttribute("style", "padding-right: 4px;")
         var demodiv = document.getElementById('list-compain');
         newSpan.innerHTML = data[i].symbol + " "
         

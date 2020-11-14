@@ -131,3 +131,33 @@
   ;
 }
 
+
+body { margin: 20px; }
+
+.marquee {
+  height: 25px;
+  width: 1000%;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee #list-compain {
+  display: block;
+  width: 100%;
+  height: 30px;
+
+  position: absolute;
+  overflow: hidden;
+
+  animation: marquee 180s linear infinite;
+}
+
+.marquee span {
+  float: left;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
