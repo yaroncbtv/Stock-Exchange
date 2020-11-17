@@ -1,6 +1,5 @@
 
 export function Search() {
-
     var searchList = [];
     let jsondata;
     var obj;
@@ -89,39 +88,3 @@ export function Search() {
             });
     })
 };
-
-
-
-//----------------------------------------------------------------------
-//OLD V
-
-// var text = inputUser;
-// var query = new RegExp("(\\b" + text + "\\b)", "gim");
-// var e = a1.innerHTML
-// var enew = e.replace(/(<span>|<\/span>)/igm, "");
-// a1.innerHTML = enew;
-// var newe = enew.replace(query, "<span style = background-color: yellow;>$1</span>");
-// a1.innerHTML = newe;
-
-
-
-
-// for(var i=0 ; i<=inputUser.length-1; i++){
-//     for(var j=0 ; j<=data[index].name.length-1; j++)
-//         if(data[index].name[j] === inputUser[i]){
-//          console.log(data[index].name[j]+ "===" +inputUser[i])
-
-//             a1.innerHTML = a1.innerHTML.replace(data[index].name[j], '<span style="background-color: yellow;">'+data[index].name[j]+'</span>');
-
-//     }
-
-// }
-
-
-
-
-function task(i) {
-    setTimeout(function () {
-
-    }, 2000 * i);
-} 

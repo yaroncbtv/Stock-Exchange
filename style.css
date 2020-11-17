@@ -104,8 +104,6 @@
     background: white;
     border-radius: 5px;
   }
-  
-  
   body {
     background: #EEF2F7;
   }
@@ -122,18 +120,10 @@
     width: 100px;
     height: 100px;
   }
-
-
-  
-
 #theList{
   color:#5a5a5a;
   width: 100%;
 }
-
-
-/* body { margin: 20px; } */
-
 .marquee {
   height: 25px;
   width: 100%;

@@ -1,3 +1,4 @@
+
 export function Marquee() {
     fetch('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/stock/list')
         .then(response => response.json())
